@@ -39,7 +39,7 @@ At the DNS provider for `hendrikmelse.com` (Namecheap), add:
 | Type | Host | Value |
 |---|---|---|
 | A Record | `@` | the server's IPv4 |
-| A Record (or CNAME) | `www` | the server's IPv4 (or `hendrikmelse.com.`) |
+| CNAME Record | `www` | `hendrikmelse.com.` |
 
 Leave the `flashcards` record alone. Caddy can only get a certificate once these
 resolve to the server.

@@ -57,6 +57,6 @@ Pushes to `master` build and publish an image tagged with the commit SHA; once t
 ## Status
 
 - [x] Project framework (monorepo, Vite + React + TS, Dockerfile, CI, deploy files)
-- [ ] Server setup: DNS, Caddy block, first deploy, CI secrets (see `deploy/README.md`)
+- [x] Server setup and deploy loop: DNS, Caddy block, CI secrets; live at https://hendrikmelse.com
 - [ ] Real project entries and links in `projects.ts`
 - [ ] About/contact section
