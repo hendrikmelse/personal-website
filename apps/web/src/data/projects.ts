@@ -1,10 +1,11 @@
 export interface Project {
   title: string;
   description: string;
-  tags: string[];
-  /** Live URL of the deployed app. */
+  /** Screenshot filename in public/screenshots/ (e.g. "flashcards.png"). 16:10 works best. */
+  screenshot?: string;
+  /** Live URL of the deployed app. The whole card links here. */
   url?: string;
-  /** Source repository URL. */
+  /** Source repository URL. Used as the card link when there is no live URL. */
   repo?: string;
 }
 
@@ -12,14 +13,14 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Language Flashcards",
-    description: "A flashcard app for studying languages.",
-    tags: ["Flashcards", "Full-stack"],
-    // url: "https://...",
+    description: "A flashcard app for studying language vocabulary.",
+    screenshot: "flashcards.png",
+    url: "https://flashcards.hendrikmelse.com",
   },
   {
-    title: "Scorekeeper",
-    description: "A frontend-only app for keeping score during games.",
-    tags: ["Frontend"],
-    // url: "https://...",
+    title: "Scoreplot",
+    description: "An app for keeping score during game night.",
+    screenshot: "scoreplot.png",
+    url: "https://scoreplot.com",
   },
 ];
