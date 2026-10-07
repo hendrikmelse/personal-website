@@ -1,0 +1,19 @@
+{
+  "name": "personal-website",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @personal-website/web",
+    "dev:web": "npm run dev -w @personal-website/web",
+    "build": "npm run build:web",
+    "build:web": "npm run build -w @personal-website/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,20 @@
+# Add these blocks to /srv/caddy/Caddyfile on the server, next to the existing
+# flashcards block. portfolio-web is on the "web" network (see
+# portfolio/compose.yaml), so Caddy can reach it by container name.
+
+hendrikmelse.com {
+	encode zstd gzip
+	reverse_proxy portfolio-web:8080
+
+	# When there is a backend, send /api/* to it and everything else to the site:
+	#   handle /api/* {
+	#       reverse_proxy portfolio-api:3000
+	#   }
+	#   handle {
+	#       reverse_proxy portfolio-web:8080
+	#   }
+}
+
+www.hendrikmelse.com {
+	redir https://hendrikmelse.com{uri} permanent
+}

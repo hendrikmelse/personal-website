@@ -1,0 +1,29 @@
+# The personal website. Its image is built and pushed by CI (.github/workflows);
+# deploy.sh sets IMAGE to the commit being deployed.
+services:
+  web:
+    image: ${IMAGE:?set IMAGE, e.g. by running deploy.sh}
+    container_name: portfolio-web
+    restart: unless-stopped
+    networks:
+      - web # reached by Caddy
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: journald
+      options:
+        tag: "{{.Name}}"
+
+# When a backend is added, put it here as a second service (e.g. container_name:
+# portfolio-api, attached to `web`, and to `db` if it needs Postgres) and route
+# /api/* to it in the Caddyfile.
+
+networks:
+  web:
+    external: true
+    name: web
