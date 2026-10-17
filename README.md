@@ -14,6 +14,8 @@ A simple portfolio of my projects, at **hendrikmelse.com** and hosted on the sam
 ```
 apps/web/             React single-page app (the portfolio)
   src/data/projects.ts    the list of projects shown on the page
+  content/                long-form content (all rights reserved)
+  public/screenshots/     project screenshots (all rights reserved)
 deploy/               Production runbook (deploy/README.md) and server-side files
 .github/workflows/    CI: typecheck, build, image, deploy
 Dockerfile            Builds the web app, serves it with nginx
@@ -53,6 +55,10 @@ Pushes to `master` build and publish an image tagged with the commit SHA; once t
 1. Create `apps/api/` (the workspaces glob `apps/*` already includes it) and, if needed, `packages/shared/` (add it to `workspaces`).
 2. Enable the `/api` proxy in `apps/web/vite.config.ts` so development is same-origin.
 3. Extend the `Dockerfile` and CI to build the API image, add an `api` service to `deploy/server/portfolio/compose.yaml`, and route `/api/*` to it in the Caddyfile. Details are in the "Adding a backend later" section of `deploy/README.md`.
+
+## License
+
+The source code is licensed under the [MIT License](LICENSE). The site's content (writing, screenshots, images, and project descriptions) is Copyright © 2026 Hendrik Melse, all rights reserved. See [LICENSE-CONTENT.md](LICENSE-CONTENT.md) for exactly what is covered.
 
 ## Status
 

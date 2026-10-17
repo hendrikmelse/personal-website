@@ -17,7 +17,7 @@ export default function App() {
     <>
       <header className="hero">
         <h1>Hendrik Melse</h1>
-        <p>Open source, ad-free webapps.</p>
+        <p>Simple, ad-free webapps.</p>
       </header>
       <main>
         <h2>Projects</h2>
